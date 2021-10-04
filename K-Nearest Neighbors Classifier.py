@@ -84,6 +84,3 @@ from sklearn.neighbors import KNeighborsClassifier
 classifier = KNeighborsClassifier(5)
 classifier.fit(movie_dataset, labels)
 print(classifier.predict([[0.45, 0.2, 0.5], [0.25, 0.8, 0.9], [0.1, 0.1, 0.9]]))
-
-
-

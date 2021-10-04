@@ -31,7 +31,3 @@ plt.xlabel('k')
 plt.ylabel('Validation Accuracy')
 plt.title("Breast Cancer Classifier Accuracy")
 plt.show()
-
-
-
-
