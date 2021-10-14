@@ -1,0 +1,71 @@
+-- What are the column names?
+SELECT *
+FROM transaction_data
+LIMIT 10;
+
+-- Find the full_names and emails
+-- of the transactions listing 20252 as the zip code.
+SELECT full_name, email
+FROM transaction_data
+WHERE zip = 20252;
+
+-- Use a query to find the names
+-- and emails associated with these transactions.
+SELECT full_name, email
+FROM transaction_data
+WHERE full_name LIKE 'Art Vandelay'
+  OR full_name LIKE '% der %'
+
+-- Find the ip_addresses and emails listed with these transactions.
+SELECT ip_address, email
+FROM transaction_data
+WHERE ip_address LIKE '10.%'
+
+-- Find the emails in transaction_data with
+-- ‘temp_email.com’ as a domain.
+SELECT *
+FROM transaction_data
+WHERE email  LIKE '%temp_email.com'
+
+-- The finance department is looking for a specific transaction.
+-- They know that the transaction occurred from an ip address starting
+-- with ‘120.’ and their full name starts with ‘John’.
+
+SELECT *
+FROM transaction_data
+WHERE ip_address LIKE '120.%'
+  AND full_name LIKE 'John%'
+
+
+-- Find the email addresses and birthdays of users whose
+-- birthday is between 1980-01-01 and 1989-12-31.
+ SELECT email, birthday
+ FROM users
+ WHERE birthday BETWEEN '1980-01-01'
+   AND '1989-12-31'
+
+
+-- Find the emails for all users who received both a campaign and a test.
+-- These users will have non-empty entries in the
+-- campaign and test columns.
+SELECT email
+FROM users
+WHERE campaign IS NOT NULL
+  AND test IS NOT NULL
+
+SELECT title, score
+FROM hacker_news
+ORDER BY score DESC
+LIMIT 5;
+
+SELECT user, SUM(score)
+FROM hacker_news
+GROUP BY user
+HAVING SUM(score) > 200
+ORDER BY SUM(score) DESC
+
+SELECT user,COUNT(*)
+FROM hacker_news
+WHERE url LIKE '%watch?v=dQw4w9WgXcQ%'
+GROUP BY user
+ORDER BY COUNT(*) DESC;
