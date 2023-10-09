@@ -328,6 +328,7 @@ def generate_person():
 def format_data(person, letter):
     return f"Compare {letter}: {person['name']}, a {person['description']}, from {person['country']}"
 
+
 current_score = 0
 should_continue = True
 
