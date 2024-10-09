@@ -1,10 +1,59 @@
-from selenium import webdriver
+# from keras.datasets import mnist
+import numpy as np
+#
+# (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+#
+#
+#
+#
+#
+# print(train_images.ndim)
+# print(train_images.shape)
+# print(train_images.dtype)
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(chrome_options)
-driver.get("https://en.wikipedia.org/wiki/Main_Page")
 
-article_count = driver.find_element("#articlecount a")
-article_count.click()
+arr = \
+[
+    [
+    [
+        [1, 2, 2],
+        [1, 2, 3],
+        [1, 52, 3]
+    ],
+    [
+        [1, 2, 2],
+        [1, 2, 3],
+        [1, 533, 3]
+    ],
+    [
+        [1, 2, 2],
+        [1, 2, 3],
+        [1, 52, 3]
+    ],
+        ],
+    [
+        [
+            [1, 2, 2],
+            [1, 2, 3],
+            [1, 52, 3]
+        ],
+        [
+            [1, 2, 2],
+            [1, 2, 3],
+            [1, 533, 3]
+        ],
+        [
+            [1, 2, 2],
+            [1, 2, 3],
+            [1, 52, 3]
+        ],
+    ],
+]
+
+print(np.array(arr).shape)
+
+
+
+
+
